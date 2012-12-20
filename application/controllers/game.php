@@ -63,10 +63,34 @@ class Game extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function lynch($game_id)
+	{
+		$this->load->database();
+		$this->load->model('vote_model');
+
+		$form_data = array('votes.gameid' => $game_id);
+
+		$lynch_id = $this->vote_model->lynch($form_data);
+
+		$this->load->model('users_db');
+
+		$form_data = array('users.id' => $lynch_id);
+		$lynch_name = $this->users_db->get_name_by_id($form_data);
+
+		$form_data = array ('chat.username' => 'Moderator',
+                                                        'chat.message' => 'The crowd roars and hangs ' . $lynch_name['user_name'] .'.',
+                                                        'chat.game_id' => $game_id);
+                $this->game_model->insert($form_data);
+
+	}
+
+
 	public function night($game_id)
 	{
 		$this->load->database();
                 $this->load->model('game_model');
+
+		$this->lynch($game_id);
 
 		$form_data = array ('game_state.game_id' => $game_id,
                                                         'game_state.state_id' => 5);

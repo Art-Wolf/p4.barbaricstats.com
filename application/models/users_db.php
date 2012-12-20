@@ -70,6 +70,16 @@ class Users_db extends CI_Model {
                 return $this->db->get()->row();
         }
 
+	function get_name_by_id($form_data) {
+		$this->db->escape($form_data);
+
+		$this->db->select('users.user_name');
+		$this->db->from('users');
+		$this->db->where($form_data);
+
+                return $this->db->get()->row();
+	}
+
 	function Start_following($form_data) {
 		$this->db->insert('follows', $form_data);
 
