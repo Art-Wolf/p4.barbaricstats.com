@@ -117,6 +117,10 @@ $('.row .btn-info').on('click', function(e) {
                                 </tr>
                         </table>
 
+			<?php
+                                                if($this->session->userdata('user_name')) {
+                                        ?>
+
 			<script type="text/javascript">
 			$('#chat-submit').click(function() {
 				$.ajax({
@@ -133,7 +137,7 @@ $('.row .btn-info').on('click', function(e) {
         <script type="text/javascript">
                 setInterval(function() {
                                 $.ajax({
-                                        url: "/ajax_chat/<?php echo $game->id; ?>",
+                                        url: "/ajax_chat/lobby",
                                         async: false,
                                         type: "POST",
                                         data: "type=chat",
@@ -144,6 +148,7 @@ $('.row .btn-info').on('click', function(e) {
                                 })
                         }, 1000);
         </script>
+			<?php } ?>
 		</div>
 	</div>
 

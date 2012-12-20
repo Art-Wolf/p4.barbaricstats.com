@@ -58,6 +58,17 @@ class Ajax_chat extends CI_Controller {
 		$this->load->view('ajax_chat_box', $data);
 	}
 
+	public function lobby()
+	{
+                $this->load->helper(array('url'));
+                $this->load->database();
+                $this->load->model('chat_model');
+
+                $data['chat'] = $this->chat_model->get_latest();
+
+                $this->load->view('ajax_chat_box', $data);
+        }
+
 	public function submit()
 	{
 		$this->load->helper(array('form','url'));

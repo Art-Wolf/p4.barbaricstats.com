@@ -291,13 +291,13 @@ class Game extends CI_Controller {
 	}
 
 
-	public function chat_message()
+	public function chat_message($game_id)
         {
                 $this->load->helper(array('form','url'));
                 $this->load->database();
 
                 if($this->session->userdata('user_name')) {
-                        $data = array ( 'chat.game_id'=> $this->session->userdata('game_id'),
+                        $data = array ( 'chat.game_id'=> $game_id,
 					'chat.username' => $this->session->userdata('user_name'),
                                         'chat.message' => set_value('chat-message')
                         );

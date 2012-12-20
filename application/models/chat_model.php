@@ -25,12 +25,13 @@ class Chat_model extends CI_Model
         {
                 $this->db->escape($data);
 
-		$this->db->select('COUNT(*)');
+		$this->db->select('COUNT(*) cnt');
 		$this->db->from('game');
-		$this->db->where('game.state_id = 6 AND game.id = ' . $data['chat.game_id']);
+		$this->db->join('game_state', 'game.id = game_state.game_id');
+		$this->db->where('game_state.state_id < 5 AND game.id = ' . $data['chat.game_id']);
 
 		$result = $this->db->get()->result();
-		if($result == 0)
+		if($result['cnt'] == 0)
 		{
                 	$this->db->insert('chat', $data);
 

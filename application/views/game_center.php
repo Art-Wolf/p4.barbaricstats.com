@@ -94,7 +94,7 @@ $mafia_ind = FALSE;
 			<script type="text/javascript">
 			$('#chat-submit').click(function() {
 				$.ajax({
-                        	        url: "/game/chat_message",
+                        	        url: "/game/chat_message/<?php echo $game_id; ?>",
                         	        async: false,
                         	        type: "POST",
                         	        data: "chat-message=" + $('#chat-message').val(),
