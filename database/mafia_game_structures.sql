@@ -33,6 +33,15 @@ CREATE TABLE `chat` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `chat`
+--
+
+LOCK TABLES `chat` WRITE;
+/*!40000 ALTER TABLE `chat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `chat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ci_sessions`
 --
 
@@ -49,6 +58,16 @@ CREATE TABLE `ci_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ci_sessions`
+--
+
+LOCK TABLES `ci_sessions` WRITE;
+/*!40000 ALTER TABLE `ci_sessions` DISABLE KEYS */;
+INSERT INTO `ci_sessions` VALUES ('8fdaa4e62f3fb6f4654b83ae75e38ccf','127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:15.0) Gecko/20100101 Firefox/15.0.1',1356016141,'a:3:{s:9:\"user_data\";s:0:\"\";s:13:\"previous_page\";s:15:\"ajax_chat/lobby\";s:12:\"current_page\";s:15:\"ajax_chat/lobby\";}');
+/*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `follows`
@@ -70,6 +89,15 @@ CREATE TABLE `follows` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `follows`
+--
+
+LOCK TABLES `follows` WRITE;
+/*!40000 ALTER TABLE `follows` DISABLE KEYS */;
+/*!40000 ALTER TABLE `follows` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `game`
 --
 
@@ -88,6 +116,15 @@ CREATE TABLE `game` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `game`
+--
+
+LOCK TABLES `game` WRITE;
+/*!40000 ALTER TABLE `game` DISABLE KEYS */;
+/*!40000 ALTER TABLE `game` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `game_state`
 --
 
@@ -100,6 +137,15 @@ CREATE TABLE `game_state` (
   `state_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `game_state`
+--
+
+LOCK TABLES `game_state` WRITE;
+/*!40000 ALTER TABLE `game_state` DISABLE KEYS */;
+/*!40000 ALTER TABLE `game_state` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `karma`
@@ -122,6 +168,15 @@ CREATE TABLE `karma` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `karma`
+--
+
+LOCK TABLES `karma` WRITE;
+/*!40000 ALTER TABLE `karma` DISABLE KEYS */;
+/*!40000 ALTER TABLE `karma` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `logins`
 --
 
@@ -136,6 +191,15 @@ CREATE TABLE `logins` (
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logins`
+--
+
+LOCK TABLES `logins` WRITE;
+/*!40000 ALTER TABLE `logins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `logins` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `mafia_chat`
@@ -155,6 +219,15 @@ CREATE TABLE `mafia_chat` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `mafia_chat`
+--
+
+LOCK TABLES `mafia_chat` WRITE;
+/*!40000 ALTER TABLE `mafia_chat` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mafia_chat` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `posts`
 --
 
@@ -172,6 +245,15 @@ CREATE TABLE `posts` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `posts`
+--
+
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `role`
 --
 
@@ -186,6 +268,16 @@ CREATE TABLE `role` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'Mob'),(2,'Mafia');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `states`
 --
 
@@ -198,6 +290,16 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `states`
+--
+
+LOCK TABLES `states` WRITE;
+/*!40000 ALTER TABLE `states` DISABLE KEYS */;
+INSERT INTO `states` VALUES (1,'INITIAL'),(2,'START'),(3,'DAY'),(4,'VOTE'),(5,'NIGHT'),(6,'END');
+/*!40000 ALTER TABLE `states` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -222,6 +324,16 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (-1,'Moderator','moderator','john@johndoyle.ie',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `votes`
 --
 
@@ -235,6 +347,15 @@ CREATE TABLE `votes` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `votes`
+--
+
+LOCK TABLES `votes` WRITE;
+/*!40000 ALTER TABLE `votes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `votes` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -245,4 +366,4 @@ CREATE TABLE `votes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-12-20  2:07:42
+-- Dump completed on 2012-12-20 10:10:24
